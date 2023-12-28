@@ -1,6 +1,10 @@
-import ArrayBufferConverter from '../converter';
+import getBuffer from '../app';
+import ArrayBufferConverter from '../ArrayBufferConverter';
 
 test('to string', () => {
-  const arr = new ArrayBufferConverter();
-  expect(arr.toString()).toBe('{"data":{"user":{"id":1,"name":"Hitman","level":10}}}');
+  const buffer = getBuffer();
+  const converter = new ArrayBufferConverter();
+  converter.load(buffer);
+  const converterString = converter.toString();
+  expect(converterString).toEqual(' {"data":{"user":{"id":1,"name":"Hitman","level":10}}}');
 });
