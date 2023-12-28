@@ -1,17 +1,17 @@
 import getBuffer from './getbuffer';
 
 export default class ArrayBufferConverter {
-  load() {
-    return getBuffer();
+  load(buffer) {
+    this.buffer = buffer;
   }
 
   toString() {
-    const buffer = this.load();
-    const bufferView = new Uint16Array(buffer);
-    let str = '';
+    let result = '';
+    const bufferView = new Uint16Array(this.buffer);
     for (let i = 0; i < bufferView.length; i += 1) {
-      str += String.fromCharCode(bufferView[i]);
+      result += String.fromCharCode(bufferView[i]);
     }
-    return str;
+
+    return result;
   }
 }
