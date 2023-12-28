@@ -1,4 +1,4 @@
-import getBuffer from '../app';
+import getBuffer from '../getbuffer';
 import ArrayBufferConverter from '../ArrayBufferConverter';
 
 test('to string', () => {
