@@ -1,4 +1,4 @@
-import getBuffer from './getbuffer';
+import getBuffer from '../getbuffer';
 
 export default class ArrayBufferConverter {
   load(buffer) {
